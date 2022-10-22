@@ -47,9 +47,11 @@ int main(){
 
 
 	for (int i = 0; i < a; i++) {
-		for (int k = 0; k <= i; k++) {
+		if (i != 0) for (int j = 0; j <= i - 1; j++) cout << " ";
+		for (int k = 0; k < (a-i); k++) {
 			cout << "*";
 		}
+
 		cout << endl;
 	}
 
