@@ -33,5 +33,24 @@ int main(){
 		cout << endl;
 	}
 
+	cout << endl << endl << "ponizej trojkat gwiazdek o a i a" << endl;
+		
+	for (int i = 0; i<a; i++) {
+		for (int k = 0; k <= i; k++) {
+			cout << "*";
+		}
+		cout << endl;
+	}
+
+	cout << endl << endl << "ponizej trojkat gwiazdek o a i a z katem prostym w prawym gornym rogu" << endl;
+
+
+
+	for (int i = 0; i < a; i++) {
+		for (int k = 0; k <= i; k++) {
+			cout << "*";
+		}
+		cout << endl;
+	}
 
 }
