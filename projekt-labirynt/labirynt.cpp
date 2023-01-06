@@ -28,7 +28,7 @@ struct playerInfo {
 playerInfo move(playerInfo player, char direction, char map[X][Y]);
 
 
-void randomizePath(char map[X][Y]){
+void randomizePath(char map[X][Y]) {
 
 	struct playerInfo path;
 	path.posX = STARTx;
@@ -38,7 +38,7 @@ void randomizePath(char map[X][Y]){
 	//srand(time(NULL));
 
 	while (1) {
-	
+
 		int randomDirection = rand() % 4;
 		//cout << randomDirection;
 		char dir;
@@ -46,7 +46,7 @@ void randomizePath(char map[X][Y]){
 		if (randomDirection == 1) dir = 'l';
 		if (randomDirection == 2) dir = 'd';
 		if (randomDirection == 3) dir = 'g';
-		path=move(path, dir, map);
+		path = move(path, dir, map);
 		map[path.posX][path.posY] = path.visual;
 		if ((path.posX == ENDx) && (path.posY == ENDy)) break;
 	}
@@ -89,7 +89,7 @@ void displayMap(char map[X][Y], playerInfo player) {
 }
 
 
-playerInfo move(playerInfo player, char direction, char map[X][Y]){
+playerInfo move(playerInfo player, char direction, char map[X][Y]) {
 	//player.posY = 3;
 	//player.posX = 2;
 	//player.visual = 'K';
@@ -100,7 +100,7 @@ playerInfo move(playerInfo player, char direction, char map[X][Y]){
 		if (map[player.posX][player.posY - 1] != '#') player.posY = player.posY - 1;
 	}
 	if (direction == 'd') {
-		if (map[player.posX+1][player.posY] != '#') player.posX = player.posX + 1;
+		if (map[player.posX + 1][player.posY] != '#') player.posX = player.posX + 1;
 	}
 	if (direction == 'g') {
 		if (map[player.posX - 1][player.posY] != '#') player.posX = player.posX - 1;
@@ -111,7 +111,7 @@ playerInfo move(playerInfo player, char direction, char map[X][Y]){
 
 int main() {
 	char map[X][Y];
-	char buttonPressed='q';
+	char buttonPressed = 'q';
 	struct playerInfo player;
 	player.posX = STARTx;
 	player.posY = STARTy;
@@ -121,7 +121,7 @@ int main() {
 	generateMap(map);
 	//while (buttonPressed != 'k') {
 	//while ((player.posX!= ENDx) && (player.posY!= ENDy)){
-	while (1==1){
+	while (1 == 1) {
 		displayMap(map, player);
 		buttonPressed = _getch();
 		system("CLS");
@@ -133,4 +133,5 @@ int main() {
 		if ((player.posX == ENDx) && (player.posY == ENDy)) break;
 	}
 	cout << "sukces";
+	_getch();
 }
